@@ -1,0 +1,4 @@
+# Obvious repo policy — auto-detected from GitHub settings on 2026-08-21
+defaultBranch: main
+mergeMethod: squash   # merge, rebase, and squash all enabled on GitHub; squash chosen
+requireHumanMerge: true
