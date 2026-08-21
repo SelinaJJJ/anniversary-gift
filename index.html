@@ -124,7 +124,8 @@
     .item.done { cursor: default; }
     .item:not(.done):hover { z-index: 10; }
     .item:not(.done):hover .item-card {
-      box-shadow: 4px 8px 20px rgba(0,0,0,.55),
+      transform: translateY(-3px);
+      box-shadow: 4px 10px 22px rgba(0,0,0,.55),
                   inset 0 0 0 1.5px rgba(255,255,255,.18);
     }
 
@@ -133,7 +134,7 @@
       background: var(--card-dark);
       border-radius: 2px; overflow: hidden;
       box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.08), 3px 4px 14px rgba(0,0,0,.55);
-      transition: box-shadow .22s;
+      transition: box-shadow .22s, transform .22s;
     }
     .item.done .item-card { background: transparent; overflow: visible; box-shadow: none; }
     .item.done .photo-area { box-shadow: 3px 6px 20px rgba(0,0,0,.45); border-radius: 2px; overflow: hidden; }
@@ -200,9 +201,9 @@
     .m-input {
       width: 100%; border: 2px solid #d4b8b8; border-radius: 2px; padding: 10px 13px;
       font-family: 'Special Elite', 'Courier New', monospace; font-size: .95rem; color: #1a1a1a;
-      background: #fdf8f2; outline: none; text-align: center; letter-spacing: .06em; transition: border-color .2s;
+      background: #fdf8f2; outline: none; text-align: center; letter-spacing: .06em; transition: border-color .2s, box-shadow .2s;
     }
-    .m-input:focus { border-color: var(--red-br); }
+    .m-input:focus { border-color: var(--red-br); box-shadow: 0 0 0 3px rgba(196,28,28,.12); }
     .m-input.wrong { border-color: var(--red-br); animation: shake .4s ease; }
     .m-input.right { border-color: #3d6e35; }
     @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-9px)} 40%{transform:translateX(9px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
@@ -213,7 +214,7 @@
     .m-btns { display: flex; gap: 9px; margin-top: 16px; }
     .btn { flex: 1; padding: 10px 8px; border: none; border-radius: 2px; font-family: 'Special Elite', 'Courier New', monospace; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: all .2s; }
     .btn-ghost { background: transparent; color: #5a3a3a; border: 1.5px solid #d4b8b8; }
-    .btn-ghost:hover { background: #ede8e0; }
+    .btn-ghost:hover { background: #ede8e0; border-color: var(--red-br); }
     .btn-fill { background: var(--red-br); color: var(--cream); box-shadow: 0 2px 8px rgba(180,28,28,.35); }
     .btn-fill:hover { background: #a01818; transform: translateY(-1px); }
     .btn-fill:active { transform: translateY(0); }
