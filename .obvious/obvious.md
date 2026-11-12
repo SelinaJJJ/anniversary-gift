@@ -46,25 +46,26 @@ Tiny flat repo (no directories) — map inlined instead of a separate `codebase-
 
 ## Local Verification Summary
 
-Validated 2026-08-21 in sandbox `cmp_04zwgzx1`:
+Validated 2026-11-12 in sandbox `cmp_XTAlgN7E`:
 
 - `python3 -m http.server 8000` → `GET /` returns HTTP 200 (33,344 bytes); every image asset returns HTTP 200.
-- Headless Chromium (Playwright) exercised the primary user flow end-to-end:
+- Headless Chromium (Playwright 1.49) exercised the primary user flow end-to-end — 16/16 checks passed:
   - Page loads with title "Our Memory Board 💌"; board renders all 7 quiz cards.
-  - Wrong answer → "not quite... try again ♡" feedback with attempt pips.
+  - Wrong answer → "not quite... try again ♡" feedback with attempt pip marked used.
   - All 7 correct answers → each card flips to its photo (`.done` class, image visible).
   - Completion screen appears: "Happy 1st Anniversary" with confetti.
-- Zero console errors, zero page errors. 4 screenshots captured: initial board,
-  question modal, post-reveal board, completion screen.
+- Zero console errors, zero page errors. 5 screenshots captured: initial board,
+  question modal, wrong-answer feedback, partial reveal, completion screen
+  (`/tmp/pw/shots/`).
 - Lint / typecheck / unit tests: not applicable — no such tooling exists in this repo.
 
 ## Sandbox snapshot
 
-- Snapshot ID: `3t8lpne0um0umr553heu:default`
-- Captured: 2026-08-21T18:00:52Z
-- Contains: repo checkout on `main`, verified dev-server setup, Playwright + Chromium
-  installed under `/tmp/pw` (verification script `/tmp/pw/verify.js`, screenshots in
-  `/tmp/pw/shots/`).
+- Snapshot ID: `gp3s06r8t85p56bybj81:default`
+- Captured: 2026-11-12T19:28:00Z
+- Contains: repo checkout on `main`, verified dev-server setup, Playwright 1.49 +
+  Chromium headless shell installed under `/tmp/pw` (verification script
+  `/tmp/pw/verify.js`, screenshots in `/tmp/pw/shots/`).
 
 ## Notes for agents
 
